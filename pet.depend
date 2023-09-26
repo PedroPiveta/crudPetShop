@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1695767477 source:c:\users\alyss\onedrive\documentos\estrutara de dados\pet\main.c
+	<stdlib.h>
+	<stdio.h>
+	"pet.h"
+	"servicos.h"
+
+1695761675 c:\users\alyss\onedrive\documentos\estrutara de dados\pet\pet.h
+
+1695761675 source:c:\users\alyss\onedrive\documentos\estrutara de dados\pet\pet.c
+	<stdio.h>
+	<stdlib.h>
+	"servicos.h"
+	"pet.h"
+
+1695767494 c:\users\alyss\onedrive\documentos\estrutara de dados\pet\servicos.h
+	"pet.h"
+
+1695767494 source:c:\users\alyss\onedrive\documentos\estrutara de dados\pet\servicos.c
+	<stdio.h>
+	"servicos.h"
+	"pet.h"
+

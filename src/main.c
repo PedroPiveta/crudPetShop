@@ -2,50 +2,25 @@
 #include <stdio.h>
 #include "pet.h"
 #include "servicos.h"
+#include "cliente.h"
 
 int main(){
     LISTA_pet *lista = criarListaPets();
     LISTA_SERVICO *listas = criarListaServicos();
 
-    int op;
-    do
-    {
-        system("cls");
-        printf("O que deseja: \n");
-        printf("1 - Cadastrar um novo pet\n");
-        printf("2 - Listar pets\n");
-        printf("3 - buscar pet\n");
-        printf("4 - Excluir um pet\n");
-        printf("5 - Listar servicos\n");
-        printf("0 - Voltar\n");
+    int op = 0;
+        do {
+            printf("Escolha a opcao desejada:\n");
+            printf("1 - Opcoes Cliente\n");
+            printf("0 - Sair\n");
+            scanf("%d", &op);
 
-        scanf("%d", &op);
-
-        switch(op)
-        {
-        case 1:
-            system("cls");
-            cadastrarPet(lista);
-            break;
-        case 2:
-            system("cls");
-            listarPets(lista);
-            break;
-        case 3:
-            system("cls");
-            buscarPet(lista);
-            break;
-        case 4:
-            system("cls");
-            excluirPet(lista);
-            break;
-        case 5:
-            system("cls");
-            verHistorico(listas);
-            break;
-        }
-    }
-    while(op != 0);
+            switch(op) {
+                case 1:
+                selectCliente();
+                break;
+            }
+        } while (op != 0);
 
     free(lista);
 }

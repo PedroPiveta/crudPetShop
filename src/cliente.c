@@ -17,7 +17,7 @@ LISTA_cliente* criarListaClientes()
     return inicio;
 }
 
-void cadastrarcliente(LISTA_cliente* lista)
+void cadastrarCliente(LISTA_cliente* lista)
 {
     nodeCliente *novo = (nodeCliente*) malloc (sizeof(nodeCliente));
     if(novo == NULL)
@@ -58,11 +58,20 @@ void cadastrarcliente(LISTA_cliente* lista)
         novo->ant = tmp;
     }
 
+    printf("Informe o ID do novo cliente: ");
+    scanf("%d", &novo->cliente_id);
+    printf("Informe o nome do novo cliente: ");
+    scanf("%s", &novo->nome);
+    printf("Informe o cpf do novo cliente: ");
+    scanf("%s", &novo->cpf);
+    printf("Informe o endereco do novo cliente: ");
+    scanf("%s", &novo->endereco);
+
     printf("\ncliente cadastrado com sucesso!!\n");
     system("pause");
 }
 
-void buscarcliente(LISTA_cliente* lista)
+void buscarCliente(LISTA_cliente* lista)
 {
     int cliente_id, op;
     printf("Informe o ID do cliente que deseja visualizar: ");
@@ -129,7 +138,7 @@ void buscarcliente(LISTA_cliente* lista)
     system("pause");
 }
 
-void editarcliente(LISTA_cliente* lista)
+void editarCliente(LISTA_cliente* lista)
 {
     int cliente_id;
     printf("Informe o ID do cliente que deseja editar: ");
@@ -158,7 +167,7 @@ void editarcliente(LISTA_cliente* lista)
     system("pause");
 }
 
-void listarClientes(LISTA_cliente* lista)
+void listarCliente(LISTA_cliente* lista)
 {
     nodeCliente *tmp = *lista;
 
@@ -184,7 +193,7 @@ void listarClientes(LISTA_cliente* lista)
 //     // Implementar a l�gica para ver o hist�rico de servi�os de um cliente
 // }
 
-void excluircliente(LISTA_cliente* lista)
+void excluirCliente(LISTA_cliente* lista)
 {
     int cliente_id;
 
@@ -245,4 +254,54 @@ void liberarCliente(LISTA_cliente* lista)
         }
         *lista = NULL;
     }
+}
+
+void selectCliente() {
+    LISTA_cliente lista = criarListaClientes();
+    int op;
+    do
+    {
+        system("cls");
+        printf("O que deseja: \n");
+        printf("1 - Cadastrar um novo cliente\n");
+        printf("2 - Listar clientes\n");
+        printf("3 - buscar cliente\n");
+        printf("4 - Excluir um cliente\n");
+        printf("5 - Listar servicos\n");
+        printf("0 - Voltar\n");
+
+        scanf("%d", &op);
+
+        switch(op)
+        {
+        case 1:
+            system("cls");
+            cadastrarCliente(lista);
+            break;
+        case 2:
+            system("cls");
+            listarCliente(lista);
+            break;
+        case 3:
+            system("cls");
+            buscarCliente(lista);
+            break;
+        case 4:
+            system("cls");
+            excluirCliente(lista);
+            break;
+        case 5:
+            system("cls");
+            editarCliente(lista);
+            break;
+        case 6:
+            system("cls");
+            liberarCliente(lista);
+            break;
+        default:
+            printf("Opcao invalida");
+            break;
+        }
+    }
+    while(op != 0);
 }

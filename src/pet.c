@@ -116,7 +116,7 @@ void buscarPet(LISTA_pet* lista)
                     printf("Nova idade: ");
                     scanf("%d", &tmp->idade);
                     printf("Novo genero: ");
-                    scanf(" %c", &tmp->genero); // Use espaço para evitar quebras de linha anteriores
+                    scanf(" %c", &tmp->genero); // Use espaï¿½o para evitar quebras de linha anteriores
                     printf("Nova cor: ");
                     scanf("%s", tmp->cor);
                     printf("\n\n");
@@ -127,20 +127,20 @@ void buscarPet(LISTA_pet* lista)
                     inserirServicosNoPet(lista, tmp);
                     break;
                 case 3:
-                    //verHistorico(); // Chame verHistorico com o parâmetro correto
+                    //verHistorico(); // Chame verHistorico com o parï¿½metro correto
                     break;
                 case 0:
-                    return; // Saia da função sem retornar um valor
+                    return; // Saia da funï¿½ï¿½o sem retornar um valor
                 default:
                     printf("Opcao invalida\n");
             }
         } else {
             printf("Pet nao encontrado!\n\n");
             system("pause");
-            return; // Saia da função sem retornar um valor
+            return; // Saia da funï¿½ï¿½o sem retornar um valor
         }
 
-        tmp = tmp->prox; // Mova o ponteiro para o próximo nó dentro do loop
+        tmp = tmp->prox; // Mova o ponteiro para o prï¿½ximo nï¿½ dentro do loop
     }
 
     system("pause");
@@ -228,7 +228,7 @@ void inserirServicosNoPet(LISTA_pet* lista, nodePet *pet)
 }
 
 // void verHistoricoServicos(LISTA* lista) {
-//     // Implementar a lógica para ver o histórico de serviços de um pet
+//     // Implementar a lï¿½gica para ver o histï¿½rico de serviï¿½os de um pet
 // }
 
 void excluirPet(LISTA_pet* lista)
@@ -274,7 +274,7 @@ void excluirPet(LISTA_pet* lista)
     system("pause");
 }
 
-void liberar(LISTA_pet* lista)
+void liberarPet(LISTA_pet* lista)
 {
     if((*lista) == NULL)
     {

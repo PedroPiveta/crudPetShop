@@ -26,5 +26,6 @@ void listarPets(LISTA_pet* lista);  // esta ok
 void inserirServicosNoPet(LISTA_pet* lista, nodePet *pet);
 void verHistoricoServicos(LISTA_pet* lista);
 void excluirPet(LISTA_pet* lista);  // esta ok
+void liberarPet(LISTA_pet* lista);
 
 #endif

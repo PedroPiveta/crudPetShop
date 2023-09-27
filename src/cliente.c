@@ -91,8 +91,6 @@ void buscarCliente(LISTA_cliente* lista)
             // printf("Dono ID: %d\n\n", tmp->dono_id);
 
             printf("1 - Editar cliente\n");
-            printf("2 - Inserir Servico\n");
-            printf("3 - Ver historico de servicos\n");
             printf("0 - Voltar\n");
             scanf("%d", &op);
 
@@ -257,7 +255,7 @@ void liberarCliente(LISTA_cliente* lista)
 }
 
 void selectCliente() {
-    LISTA_cliente lista = criarListaClientes();
+    LISTA_cliente *lista = criarListaClientes();
     int op;
     do
     {

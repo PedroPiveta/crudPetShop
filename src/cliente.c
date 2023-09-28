@@ -26,6 +26,18 @@ void cadastrarCliente(LISTA_cliente* lista)
         exit(0);
     }
 
+    printf("Informe o ID do novo cliente: ");
+    scanf("%d", &novo->cliente_id);
+    printf("Informe o nome do novo cliente: ");
+    scanf("%s", &novo->nome);
+    printf("Informe o cpf do novo cliente: ");
+    scanf("%s", &novo->cpf);
+    printf("Informe o endereco do novo cliente: ");
+    scanf("%s", &novo->endereco);
+
+    printf("\ncliente cadastrado com sucesso!!\n");
+    system("pause");
+
     nodeCliente *tmp;
     tmp = (*lista);
 
@@ -34,7 +46,7 @@ void cadastrarCliente(LISTA_cliente* lista)
             printf("\nNao foi possivel cadastrar o cliente pois ja existe um cliente com este ID!!!\n");
             free(novo);
             system("pause");
-            return 1;
+            return;
         }
         tmp= tmp->prox;
     }
@@ -57,18 +69,6 @@ void cadastrarCliente(LISTA_cliente* lista)
         tmp->prox = novo;
         novo->ant = tmp;
     }
-
-    printf("Informe o ID do novo cliente: ");
-    scanf("%d", &novo->cliente_id);
-    printf("Informe o nome do novo cliente: ");
-    scanf("%s", &novo->nome);
-    printf("Informe o cpf do novo cliente: ");
-    scanf("%s", &novo->cpf);
-    printf("Informe o endereco do novo cliente: ");
-    scanf("%s", &novo->endereco);
-
-    printf("\ncliente cadastrado com sucesso!!\n");
-    system("pause");
 }
 
 void buscarCliente(LISTA_cliente* lista)
@@ -171,9 +171,6 @@ void listarCliente(LISTA_cliente* lista)
     system("pause");
 }
 
-// void verHistoricoServicos(LISTA* lista) {
-//     // Implementar a l�gica para ver o hist�rico de servi�os de um cliente
-// }
 
 void excluirCliente(LISTA_cliente* lista)
 {
@@ -234,7 +231,6 @@ void liberarCliente(LISTA_cliente* lista)
             *lista = tmp->prox;
             free(tmp);
         }
-        *lista = NULL;
     }
 }
 
@@ -269,10 +265,6 @@ void selectCliente(LISTA_cliente *lista) {
         case 4:
             system("cls");
             excluirCliente(lista);
-            break;
-        case 6:
-            system("cls");
-            liberarCliente(lista);
             break;
         default:
             printf("Opcao invalida");

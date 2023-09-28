@@ -285,45 +285,31 @@ void liberarProduto(LISTA_produto *lista)
 
 void selectProduto(LISTA_produto *lista)
 {
-    int op;
-    do
+    int produto_id;
+    printf("Informe o ID do produto que deseja selecionar: ");
+    scanf("%d", &produto_id);
+
+    nodeProduto *tmp = *lista;
+
+    while (tmp != NULL)
     {
-        system("cls");
-        printf("O que deseja: \n");
-        printf("1. Cadastrar produto\n");
-        printf("2. Listar produtos\n");
-        printf("3. Buscar produto\n");
-        printf("4. Editar produto\n");
-        printf("5. Excluir produto\n");
-
-        scanf("%d", &op);
-
-        switch(op)
+        if (tmp->produto_id == produto_id)
         {
-        case 1:
             system("cls");
-            cadastrarProduto(lista);
-            break;
-        case 2:
-            system("cls");
-            listarProdutos(lista);
-            break;
-        case 3:
-            system("cls");
-            buscarProduto(lista);
-            break;
-        case 4:
-            system("cls");
-            editarProduto(lista);
-            break;
-        case 5:
-            system("cls");
-            excluirProduto(lista);
-            break;
-        default:
-            printf("Opcao invalida");
-            break;
+            printf("Produto selecionado!\n\n");
+            printf("ID: %d\n", tmp->produto_id);
+            printf("Nome: %s\n", tmp->nome);
+            printf("categoria: %s\n", tmp->categoria);
+            printf("descricao: %s\n", tmp->descricao);
+            printf("preco: %f\n", tmp->preco_unitario);
+            printf("quantidade em estoque: %d\n", tmp->quantidade_em_estoque);
+            printf("fornecedor: %s\n", tmp->fornecedor);
+            printf("\n\n");
+            system("pause");
+            return;
         }
+        tmp = tmp->prox;
     }
-    while(op != 0);
+    printf("Produto com ID %d nao encontrado na lista.\n\n", produto_id);
+    system("pause");
 }

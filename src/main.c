@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "pet.h"
 #include "servicos.h"
-#include "cliente.h"
 
 int main()
 {
@@ -10,10 +9,8 @@ int main()
     LISTA_pet *lista = criarListaPets();
     LISTA_SERVICO *listas = criarListaServicos();
 
-    int escolha;
-
-
-    while (1)
+    int op;
+    do
     {
         system("cls");
         printf("=== MENU PRINCIPAL ===\n");
@@ -28,18 +25,18 @@ int main()
         switch (escolha)
         {
         case 1:
-            selectPet(lista, listas);
+            selectPet(lista_pet, lista_servico);
             break;
         case 2:
-            selectCliente();
+            selectCliente(lista_cliente);
             break;
 
         case 3:
-            //selectProduto();
+            selectProduto(lista_produto);
             break;
 
         case 4:
-            selectServico(lista, listas);
+            selectServico(lista_pet, lista_servico);
             break;
 
         case 0:
@@ -53,8 +50,8 @@ int main()
 
     return 0;
 
-    liberarPets(lista);
-    free(lista);
-    liberarServicos(listas);
-    free(listas);
+    liberarPets(lista_pet);
+    liberarServicos(lista_servico);
+    liberarClientes(lista_cliente);
+    liberarProdutos(lista_produto);
 }

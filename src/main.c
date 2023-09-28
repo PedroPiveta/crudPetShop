@@ -1,52 +1,59 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "pet.h"
-#include "servicos.h"
+#include "../include/servicos.h"
+#include "../include/pet.h"
 
-int main(){
+int main()
+{
+    //declarem aqui a criação das listas que vcs implementaram
     LISTA_pet *lista = criarListaPets();
     LISTA_SERVICO *listas = criarListaServicos();
 
-    int op;
-    do
+    int escolha;
+
+
+    while (1)
     {
         system("cls");
-        printf("O que deseja: \n");
-        printf("1 - Cadastrar um novo pet\n");
-        printf("2 - Listar pets\n");
-        printf("3 - buscar pet\n");
-        printf("4 - Excluir um pet\n");
-        printf("5 - Listar servicos\n");
-        printf("0 - Voltar\n");
+        printf("=== MENU PRINCIPAL ===\n");
+        printf("1. Gerenciar Pets\n");
+        printf("2. Gerenciar Clientes\n");
+        printf("3. Gerenciar Produtos\n");
+        printf("4. Gerenciar Servicos\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &escolha);
 
-        scanf("%d", &op);
-
-        switch(op)
+        switch (escolha)
         {
         case 1:
-            system("cls");
-            cadastrarPet(lista);
+            selectPet(lista, listas);
             break;
         case 2:
-            system("cls");
-            listarPets(lista);
+            //selectCliente();
             break;
+
         case 3:
-            system("cls");
-            buscarPet(lista);
+            //selectProduto();
             break;
+
         case 4:
-            system("cls");
-            excluirPet(lista);
+            selectServico(lista, listas);
             break;
-        case 5:
-            system("cls");
-            verHistorico(listas);
-            break;
+
+        case 0:
+            printf("Saindo do programa.\n");
+            return 0;
+
+        default:
+            printf("Opcao invalida. Tente novamente.\n");
         }
     }
-    while(op != 0);
 
-    liberar(lista);
+    return 0;
+
+    liberarPets(lista);
     free(lista);
+    liberarServicos(listas);
+    free(listas);
 }

@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include "pet.h"
 #include "servicos.h"
+#include "produto.h"
 
 int main(){
     LISTA_pet *lista = criarListaPets();
+    LISTA_produto *lista = criarListaPets();
     LISTA_SERVICO *listas = criarListaServicos();
 
     int op;

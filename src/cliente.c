@@ -81,14 +81,12 @@ void buscarCliente(LISTA_cliente* lista)
 
     while (tmp != NULL) {
         if (tmp->cliente_id == cliente_id) {
-            // system("cls");
-            // printf("ID: %d\n", tmp->cliente_id);
-            // printf("Nome: %s\n", tmp->nome);
-            // printf("Especie: %s\n", tmp->especie);
-            // printf("Idade: %d\n", tmp->idade);
-            // printf("Genero: %c\n", tmp->genero);
-            // printf("Cor: %s\n", tmp->cor);
-            // printf("Dono ID: %d\n\n", tmp->dono_id);
+            system("cls");
+            printf("ID: %d\n", tmp->cliente_id);
+            printf("Nome: %s\n", tmp->nome);
+            printf("CPF: %s\n", tmp->cpf);
+            printf("Endereco: %s\n", tmp->endereco);
+            printf("\n\n");
 
             printf("1 - Editar cliente\n");
             printf("0 - Voltar\n");
@@ -96,28 +94,19 @@ void buscarCliente(LISTA_cliente* lista)
 
             switch (op) {
                 case 1:
-                    // system("cls");
-                    // printf("Editando cliente...\n\n");
-                    // printf("Novo ID: ");
-                    // scanf("%d", &tmp->cliente_id);
-                    // printf("Novo nome: ");
-                    // scanf("%s", tmp->nome);
-                    // printf("Nova especie: ");
-                    // scanf("%s", tmp->especie);
-                    // printf("Nova idade: ");
-                    // scanf("%d", &tmp->idade);
-                    // printf("Novo genero: ");
-                    // scanf(" %c", &tmp->genero); // Use espa�o para evitar quebras de linha anteriores
-                    // printf("Nova cor: ");
-                    // scanf("%s", tmp->cor);
-                    // printf("\n\n");
-                    // printf("Os dados foram atualizados!\n\n");
-                    // system("pause");
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    //verHistorico(); // Chame verHistorico com o par�metro correto
+                    system("cls");
+                    printf("Editando cliente...\n\n");
+                    printf("Novo ID: ");
+                    scanf("%d", &tmp->cliente_id);
+                    printf("Novo nome: ");
+                    scanf("%s", tmp->nome);
+                    printf("Novo cpf: ");
+                    scanf("%s", tmp->cpf);
+                    printf("Novo endereco: ");
+                    scanf("%s", &tmp->endereco);
+                    printf("\n\n");
+                    printf("Os dados foram atualizados!\n\n");
+                    system("pause");
                     break;
                 case 0:
                     return; // Saia da fun��o sem retornar um valor
@@ -150,12 +139,10 @@ void editarCliente(LISTA_cliente* lista)
         {
             system("cls");
             printf("Editando cliente...\n\n");
-            // printf("Novo ID: %d\n", tmp->cliente_id);
-            // printf("Novo nome: %s\n", tmp->nome);
-            // printf("Nova especie: %s\n", tmp->especie);
-            // printf("Nova idade: %d\n", tmp->idade);
-            // printf("Novo genero: %c\n", tmp->genero);
-            // printf("Nova cor: %s\n", tmp->cor);
+            printf("Novo ID: ");
+            scanf("%d", &tmp->cliente_id);
+            printf("Novo nome: ");
+            scanf("%s", tmp->nome);
             printf("\n\n");
             printf("Os dados foram atualizados!");
         }
@@ -176,11 +163,8 @@ void listarCliente(LISTA_cliente* lista)
     {
         printf("ID: %d\n", tmp->cliente_id);
         printf("Nome: %s\n", tmp->nome);
-        // printf("Especie: %s\n", tmp->especie);
-        // printf("Idade: %d\n", tmp->idade);
-        // printf("Genero: %c\n", tmp->genero);
-        // printf("Cor: %s\n", tmp->cor);
-        // printf("Dono ID: %d\n", tmp->dono_id);
+        printf("CPF: %s\n", tmp->cpf);
+        printf("Endereco: %s\n", tmp->endereco);
         printf("\n\n");
         tmp = tmp->prox;
     }
@@ -265,7 +249,6 @@ void selectCliente() {
         printf("2 - Listar clientes\n");
         printf("3 - buscar cliente\n");
         printf("4 - Excluir um cliente\n");
-        printf("5 - Listar servicos\n");
         printf("0 - Voltar\n");
 
         scanf("%d", &op);
@@ -287,10 +270,6 @@ void selectCliente() {
         case 4:
             system("cls");
             excluirCliente(lista);
-            break;
-        case 5:
-            system("cls");
-            editarCliente(lista);
             break;
         case 6:
             system("cls");

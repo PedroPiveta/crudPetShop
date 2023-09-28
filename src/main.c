@@ -1,8 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "pet.h"
-#include "servicos.h"
-#include "cliente.h"
+#include "../include/pet.h"
+#include "../include/servicos.h"
+#include "../include/cliente.h"
+#include "pet.c"
+#include "servicos.c"
+#include "cliente.c"
 #include "produto.h"
 
 int main()

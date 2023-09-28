@@ -113,16 +113,12 @@ void buscarCliente(LISTA_cliente* lista)
                 default:
                     printf("Opcao invalida\n");
             }
-        } else {
-            printf("cliente nao encontrado!\n\n");
-            system("pause");
-            return; // Saia da fun��o sem retornar um valor
-        }
-
-        tmp = tmp->prox; // Mova o ponteiro para o pr�ximo n� dentro do loop
+        } else 
+            tmp = tmp->prox; // Mova o ponteiro para o pr�ximo n� dentro do loop
     }
-
+    printf("cliente nao encontrado!\n\n");
     system("pause");
+    return; // Saia da fun��o sem retornar um valor
 }
 
 void editarCliente(LISTA_cliente* lista)

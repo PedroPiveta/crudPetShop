@@ -16,6 +16,10 @@ int main()
     do
     {
         system("cls");
+        printf(" _._     _,-'\"\"`-._\n");
+        printf("(,-.`._,'(       |\\`-/|\n");
+        printf("    `-.-' \\ )-`( , o o)\n");
+        printf("          `-    \\\\`_`\"'-\n");
         printf("=== MENU PRINCIPAL ===\n");
         printf("1. Gerenciar Pets\n");
         printf("2. Gerenciar Clientes\n");

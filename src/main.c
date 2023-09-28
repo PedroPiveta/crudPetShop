@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/servicos.h"
-#include "../include/pet.h"
+#include "pet.h"
+#include "servicos.h"
+#include "cliente.h"
 
 int main()
 {

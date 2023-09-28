@@ -20,6 +20,17 @@ typedef struct NodePet
 
 typedef nodePet* LISTA_pet;
 
+<<<<<<< HEAD
+LISTA_pet* criarListaPets(); // esta ok
+void cadastrarPet(LISTA_pet* lista); // esta ok
+void buscarPet(LISTA_pet* lista); // esta ok
+void editarPet(LISTA_pet* lista); //esta ok
+void listarPets(LISTA_pet* lista);  // esta ok
+void inserirServicosNoPet(LISTA_pet* lista, nodePet *pet);
+void verHistoricoServicos(LISTA_pet* lista);
+void excluirPet(LISTA_pet* lista);  // esta ok
+void liberarPet(LISTA_pet* lista);
+=======
 void selectPet();
 LISTA_pet* criarListaPets();
 void cadastrarPet(LISTA_pet* lista);
@@ -28,5 +39,6 @@ void editarPet(LISTA_pet* lista);
 void listarPets(LISTA_pet* lista);
 void excluirPet(LISTA_pet* lista);
 void liberarPets(LISTA_pet* lista);
+>>>>>>> alysson
 
 #endif

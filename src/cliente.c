@@ -234,8 +234,7 @@ void liberarCliente(LISTA_cliente* lista)
     }
 }
 
-void selectCliente() {
-    LISTA_cliente *lista = criarListaClientes();
+void selectCliente(LISTA_cliente *lista) {
     int op;
     do
     {

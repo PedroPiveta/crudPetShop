@@ -17,8 +17,11 @@ int main(){
 
             switch(op) {
                 case 1:
-                selectCliente();
-                break;
+                    selectCliente();
+                    break;
+                default:
+                    printf("Opcao invalida\n");
+                    break;
             }
         } while (op != 0);
 

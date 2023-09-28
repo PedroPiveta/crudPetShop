@@ -18,6 +18,6 @@ void editarCliente(LISTA_cliente* lista);
 void listarCliente(LISTA_cliente* lista);
 void excluirCliente(LISTA_cliente* lista);
 void liberarCliente(LISTA_cliente* lista);
-void selectCliente();
+void selectCliente(LISTA_cliente* lista);
 
 #endif

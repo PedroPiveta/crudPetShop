@@ -2,12 +2,15 @@
 #include <stdio.h>
 #include "pet.h"
 #include "servicos.h"
+#include "cliente.h"
+#include "produto.h"
 
 int main()
 {
-    //declarem aqui a criação das listas que vcs implementaram
-    LISTA_pet *lista = criarListaPets();
-    LISTA_SERVICO *listas = criarListaServicos();
+    LISTA_pet *lista_pet = criarListaPets();
+    LISTA_SERVICO *lista_servico = criarListaServicos();
+    LISTA_cliente *lista_cliente = criarListaClientes();
+    LISTA_produto *lista_produto = criarListaProduto();
 
     int op;
     do
@@ -20,9 +23,9 @@ int main()
         printf("4. Gerenciar Servicos\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
-        scanf("%d", &escolha);
+        scanf("%d", &op);
 
-        switch (escolha)
+        switch (op)
         {
         case 1:
             selectPet(lista_pet, lista_servico);
@@ -46,12 +49,12 @@ int main()
         default:
             printf("Opcao invalida. Tente novamente.\n");
         }
-    }
+    } while(op != 0);
 
-    return 0;
 
     liberarPets(lista_pet);
     liberarServicos(lista_servico);
-    liberarClientes(lista_cliente);
-    liberarProdutos(lista_produto);
+    liberarCliente(lista_cliente);
+    liberarProduto(lista_produto);
+    return 0;
 }

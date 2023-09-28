@@ -1,17 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "produto.h"
-
-int main()
-{
-    LISTA_produto *lista = criarListaProduto();
-    cadastrarProduto(lista);
-    buscarProduto(lista);
-    editarProduto(lista);
-    listarProdutos(lista);
-    excluirProduto(lista);
-    return 0;
-}
+#include "../include/produto.h"
 
 LISTA_produto *criarListaProduto()
 {
@@ -292,4 +281,35 @@ void liberarProduto(LISTA_produto *lista)
         }
         *lista = NULL;
     }
+}
+
+void selectProduto(LISTA_produto *lista)
+{
+    int produto_id;
+    printf("Informe o ID do produto que deseja selecionar: ");
+    scanf("%d", &produto_id);
+
+    nodeProduto *tmp = *lista;
+
+    while (tmp != NULL)
+    {
+        if (tmp->produto_id == produto_id)
+        {
+            system("cls");
+            printf("Produto selecionado!\n\n");
+            printf("ID: %d\n", tmp->produto_id);
+            printf("Nome: %s\n", tmp->nome);
+            printf("categoria: %s\n", tmp->categoria);
+            printf("descricao: %s\n", tmp->descricao);
+            printf("preco: %f\n", tmp->preco_unitario);
+            printf("quantidade em estoque: %d\n", tmp->quantidade_em_estoque);
+            printf("fornecedor: %s\n", tmp->fornecedor);
+            printf("\n\n");
+            system("pause");
+            return;
+        }
+        tmp = tmp->prox;
+    }
+    printf("Produto com ID %d nao encontrado na lista.\n\n", produto_id);
+    system("pause");
 }

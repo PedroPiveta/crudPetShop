@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "stdlib.h": "c",
-        "servicos.h": "c",
-        "produto.h": "c",
-        "pet.h": "c",
-        "stdio.h": "c"
-    }
-}

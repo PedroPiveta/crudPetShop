@@ -24,5 +24,6 @@ void editarProduto(LISTA_produto* lista); //esta ok
 void listarProdutos(LISTA_produto* lista);  // esta ok
 void excluirProduto(LISTA_produto* lista);  // esta ok
 void liberarProduto(LISTA_produto* lista);  // esta ok
+void selectProduto(LISTA_produto* lista); // esta ok
 
 #endif

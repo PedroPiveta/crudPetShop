@@ -149,28 +149,32 @@ void insereServico(LISTA_SERVICO* listas, LISTA_pet* lista)
 void verHistorico(LISTA_SERVICO* listas)
 {
     nodeS *tmp = (*listas);
+    int op = 1;
 
     if(tmp == NULL)
     {
         printf("Nao ha nenhum cadastro!\n\n");
     }
-    while (tmp != NULL)
-    {
-        printf("SERVICO\n");
-        printf("Servico id: %d\n", tmp->servico_id);
-        printf("Descricao: %s\n", tmp->descricao);
-        printf("Tempo: %.2f\n", tmp->tempo);
-        printf("Valor: %.2f\n", tmp->valor);
-        printf("\nPET\n\n");
-        printf("Pet id: %d\n", tmp->pet->pet_id);
-        printf("Pet nome: %s\n", tmp->pet->nome);
-        printf("Pet especie: %s\n", tmp->pet->especie);
-        printf("Pet idade: %d\n", tmp->pet->idade);
-        printf("Pet genero: %c\n", tmp->pet->genero);
-        printf("Pet cor: %s\n", tmp->pet->cor);
+    while(op) {
+        while (tmp != NULL)
+        {
+            printf("\nSERVICO\n");
+            printf("Servico id: %d\n", tmp->servico_id);
+            printf("Descricao: %s\n", tmp->descricao);
+            printf("Tempo: %.2f\n", tmp->tempo);
+            printf("Valor: %.2f\n", tmp->valor);
+            printf("\nPET\n");
+            printf("Pet id: %d\n", tmp->pet->pet_id);
+            printf("Pet nome: %s\n", tmp->pet->nome);
+            printf("Pet especie: %s\n", tmp->pet->especie);
+            printf("Pet idade: %d\n", tmp->pet->idade);
+            printf("Pet genero: %c\n", tmp->pet->genero);
+            printf("Pet cor: %s\n", tmp->pet->cor);
 
-        printf("\n\n");
-        tmp = tmp->prox;
+            printf("\n");
+            tmp = tmp->prox;
+        } printf("Pressione 0 para sair...\n");
+        scanf("%d", &op);
     }
 }
 

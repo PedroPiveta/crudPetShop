@@ -4,23 +4,57 @@
 #include "servicos.h"
 #include "cliente.h"
 
-int main(){
+int main()
+{
+    //declarem aqui a criação das listas que vcs implementaram
     LISTA_pet *lista = criarListaPets();
     LISTA_SERVICO *listas = criarListaServicos();
 
-    int op = 0;
-        do {
-            printf("Escolha a opcao desejada:\n");
-            printf("1 - Opcoes Cliente\n");
-            printf("0 - Sair\n");
-            scanf("%d", &op);
+    int escolha;
 
-            switch(op) {
-                case 1:
-                selectCliente();
-                break;
-            }
-        } while (op != 0);
 
+    while (1)
+    {
+        system("cls");
+        printf("=== MENU PRINCIPAL ===\n");
+        printf("1. Gerenciar Pets\n");
+        printf("2. Gerenciar Clientes\n");
+        printf("3. Gerenciar Produtos\n");
+        printf("4. Gerenciar Servicos\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &escolha);
+
+        switch (escolha)
+        {
+        case 1:
+            selectPet(lista, listas);
+            break;
+        case 2:
+            //selectCliente();
+            break;
+
+        case 3:
+            //selectProduto();
+            break;
+
+        case 4:
+            selectServico(lista, listas);
+            break;
+
+        case 0:
+            printf("Saindo do programa.\n");
+            return 0;
+
+        default:
+            printf("Opcao invalida. Tente novamente.\n");
+        }
+    }
+
+    return 0;
+
+    liberarPets(lista);
     free(lista);
+    liberarServicos(listas);
+    free(listas);
 }

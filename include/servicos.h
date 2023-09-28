@@ -2,7 +2,8 @@
 #define SERVICOS_H_INCLUDED
 #include "pet.h"
 
-struct NodeS {
+struct NodeS
+{
     int servico_id;
     char descricao[50];
     float tempo;
@@ -16,9 +17,12 @@ typedef struct NodeS nodeS;
 typedef nodeS *LISTA_SERVICO;
 
 LISTA_SERVICO* criarListaServicos();
-void insereBanho(LISTA_SERVICO* lista, nodePet *pett);
-void inserTosa(LISTA_SERVICO* lista);
-void insereConsulta(LISTA_SERVICO* lista);
-void verHistorico(LISTA_SERVICO* lista);
+
+void selectServico(LISTA_pet* lista, LISTA_SERVICO* listas);
+
+void insereServicoNoPet(LISTA_SERVICO* listas, struct NodePet *pett);
+void insereServico(LISTA_SERVICO* listas, LISTA_pet* lista);
+void verHistorico(LISTA_SERVICO* listas);
+void liberarServicos(LISTA_SERVICO* listas);
 
 #endif

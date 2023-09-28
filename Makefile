@@ -11,7 +11,7 @@ SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(SRC_DIR)/%.o, $(SRCS))
 
 # Nome do execut�vel
-EXECUTABLE = petShop
+EXECUTABLE = petShop.exe
 
 all: $(EXECUTABLE)
 
@@ -25,5 +25,5 @@ $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	# Nada � exclu�do aqui, apenas uma mensagem de limpeza
-	@echo "Nada a ser exclu�do."
+	@echo "Nada a ser excluido."
 

@@ -11,7 +11,7 @@ SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(SRC_DIR)/%.o, $(SRCS))
 
 # Nome do execut�vel
-EXECUTABLE = petShop.exe
+EXECUTABLE = petShop
 
 all: $(EXECUTABLE)
 

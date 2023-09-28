@@ -181,66 +181,6 @@ void cadastrarPet(LISTA_pet* lista)
         nodePet *tmp;
         tmp = (*lista);
 
-<<<<<<< HEAD
-    nodePet *tmp = *lista;
-
-    while (tmp != NULL) {
-        if (tmp->pet_id == pet_id) {
-            system("cls");
-            printf("ID: %d\n", tmp->pet_id);
-            printf("Nome: %s\n", tmp->nome);
-            printf("Especie: %s\n", tmp->especie);
-            printf("Idade: %d\n", tmp->idade);
-            printf("Genero: %c\n", tmp->genero);
-            printf("Cor: %s\n", tmp->cor);
-            printf("Dono ID: %d\n\n", tmp->dono_id);
-
-            printf("1 - Editar pet\n");
-            printf("2 - Inserir Servico\n");
-            printf("3 - Ver historico de servicos\n");
-            printf("0 - Voltar\n");
-            scanf("%d", &op);
-
-            switch (op) {
-                case 1:
-                    system("cls");
-                    printf("Editando pet...\n\n");
-                    printf("Novo ID: ");
-                    scanf("%d", &tmp->pet_id);
-                    printf("Novo nome: ");
-                    scanf("%s", tmp->nome);
-                    printf("Nova especie: ");
-                    scanf("%s", tmp->especie);
-                    printf("Nova idade: ");
-                    scanf("%d", &tmp->idade);
-                    printf("Novo genero: ");
-                    scanf(" %c", &tmp->genero); // Use espa�o para evitar quebras de linha anteriores
-                    printf("Nova cor: ");
-                    scanf("%s", tmp->cor);
-                    printf("\n\n");
-                    printf("Os dados foram atualizados!\n\n");
-                    system("pause");
-                    break;
-                case 2:
-                    inserirServicosNoPet(lista, tmp);
-                    break;
-                case 3:
-                    //verHistorico(); // Chame verHistorico com o par�metro correto
-                    break;
-                case 0:
-                    return; // Saia da fun��o sem retornar um valor
-                default:
-                    printf("Opcao invalida\n");
-            }
-        } else {
-            printf("Pet nao encontrado!\n\n");
-            system("pause");
-            return; // Saia da fun��o sem retornar um valor
-        }
-
-        tmp = tmp->prox; // Mova o ponteiro para o pr�ximo n� dentro do loop
-    }
-=======
         while(tmp != NULL)
         {
             if(tmp->pet_id == novo->pet_id)
@@ -277,7 +217,6 @@ void cadastrarPet(LISTA_pet* lista)
         scanf("%d", &op);
     }
     while(op != 0);
->>>>>>> alysson
 
 }
 
@@ -331,43 +270,6 @@ void listarPets(LISTA_pet* lista)
     }
 }
 
-<<<<<<< HEAD
-void inserirServicosNoPet(LISTA_pet* lista, nodePet *pet)
-{
-    system("cls");
-
-    int op;
-
-    printf("Que tipo de servico foi prestado:\n");
-    printf("1 - Banho\n");
-    printf("2 - Tosa\n");
-    printf("3 - Consulta Veterinaria\n");
-    scanf("%d", &op);
-
-    switch(op)
-    {
-    case 1:
-        insereBanho(criarListaServicos(), pet);
-        break;
-    case 2:
-        insereTosa(criarListaServicos());
-        break;
-    case 3:
-        insereConsulta(criarListaServicos());
-        break;
-    default:
-        printf("\nOpcao invalida");
-    }
-    printf("\nServico gravado com sucesso\n\n");
-
-}
-
-// void verHistoricoServicos(LISTA* lista) {
-//     // Implementar a l�gica para ver o hist�rico de servi�os de um pet
-// }
-
-=======
->>>>>>> alysson
 void excluirPet(LISTA_pet* lista)
 {
     int pet_id;
@@ -410,11 +312,7 @@ void excluirPet(LISTA_pet* lista)
     printf("Elemento removido com sucesso.\n\n");
 }
 
-<<<<<<< HEAD
-void liberarPet(LISTA_pet* lista)
-=======
 void liberarPets(LISTA_pet* lista)
->>>>>>> alysson
 {
     if((*lista) == NULL)
     {

@@ -31,7 +31,7 @@ int main()
             selectPet(lista, listas);
             break;
         case 2:
-            //selectCliente();
+            selectCliente();
             break;
 
         case 3:

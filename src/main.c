@@ -8,7 +8,7 @@
 // #include "pet.c"
 // #include "produto.c"
 // #include "servicos.c"
-#include "../include/arquivarListas.h"
+#include "arquivarListas.h"
 
 int main()
 {
@@ -56,15 +56,13 @@ int main()
             break;
         
         case 5:
-            salvarProdutos(lista_cliente);
-            r = fputs("funciona filho da puta", arquivo);
-            if (r == EOF)
-            {
-                printf("\nError\n");
-            } else printf("\nGravado com sucesso!\n");
-            system("pause");
+            salvarClientes(lista_cliente);
+            salvarProdutos(lista_produto);
+            salvarServicos(lista_servico);
+            salvarPets(lista_pet);
             break;
-
+        case 6:
+            break;
         case 0:
             printf("Saindo do programa.\n");
             return 0;

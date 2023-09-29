@@ -55,7 +55,7 @@ void insereServico(LISTA_SERVICO* listas, LISTA_pet* lista)
 {
     int op, pet_id, teste;
 
-    nodeS *novo = (nodeS*) malloc(sizeof(nodeS));
+    nodeServico *novo = (nodeServico*) malloc(sizeof(nodeServico));
     if (novo == NULL)
     {
         printf("Erro de alocacao para novo...\n");
@@ -123,7 +123,7 @@ void insereServico(LISTA_SERVICO* listas, LISTA_pet* lista)
         scanf("%f", &novo->valor);
 
         novo->prox = NULL;
-        nodeS *tmp = *listas;
+        nodeServico *tmp = *listas;
 
         if ((*listas) == NULL)
         {
@@ -148,7 +148,7 @@ void insereServico(LISTA_SERVICO* listas, LISTA_pet* lista)
 
 void verHistorico(LISTA_SERVICO* listas)
 {
-    nodeS *tmp = (*listas);
+    nodeServico *tmp = (*listas);
     int op = 1;
 
     if(tmp == NULL)
@@ -186,7 +186,7 @@ void liberarServicos(LISTA_SERVICO* listas)
     }
     else
     {
-        nodeS *tmp;
+        nodeServico *tmp;
 
         while (tmp != NULL)
         {
@@ -199,7 +199,7 @@ void liberarServicos(LISTA_SERVICO* listas)
 }
 void insereServicoNoPet(LISTA_SERVICO* listas, struct NodePet *pett)
 {
-    nodeS *novo = (nodeS*) malloc(sizeof(nodeS));
+    nodeServico *novo = (nodeServico*) malloc(sizeof(nodeServico));
     if (novo == NULL)
     {
         printf("Erro de alocacao para novo...\n");
@@ -256,7 +256,7 @@ void insereServicoNoPet(LISTA_SERVICO* listas, struct NodePet *pett)
     strcpy(novo->pet->cor, pett->cor);
 
     novo->prox = NULL;
-    nodeS *tmp = *listas;
+    nodeServico *tmp = *listas;
 
     if ((*listas) == NULL)
     {

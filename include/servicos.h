@@ -2,19 +2,19 @@
 #define SERVICOS_H_INCLUDED
 #include "pet.h"
 
-struct NodeS
+struct NodeServico
 {
     int servico_id;
     char descricao[50];
     float tempo;
     float valor;
     struct NodePet *pet;
-    struct NodeS *prox;
-    struct NodeS *ant;
+    struct NodeServico *prox;
+    struct NodeServico *ant;
 };
 
-typedef struct NodeS nodeS;
-typedef nodeS *LISTA_SERVICO;
+typedef struct NodeServico nodeServico;
+typedef nodeServico* LISTA_SERVICO;
 
 LISTA_SERVICO* criarListaServicos();
 

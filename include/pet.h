@@ -1,9 +1,9 @@
 #ifndef PET_H_INCLUDED
 #define PET_H_INCLUDED
 
-struct NodeS;
-typedef struct NodeS nodeS;
-typedef nodeS* LISTA_SERVICO;
+struct NodeServico;
+typedef struct NodeServico nodeServico;
+typedef nodeServico* LISTA_SERVICO;
 
 typedef struct NodePet
 {

@@ -4,11 +4,12 @@
 #include "../include/servicos.h"
 #include "../include/cliente.h"
 #include "../include/produto.h"
-// #include "cliente.c"
-// #include "pet.c"
-// #include "produto.c"
-// #include "servicos.c"
-#include "arquivarListas.h"
+#include "cliente.c"
+#include "pet.c"
+#include "produto.c"
+#include "servicos.c"
+#include "arquivarListas.c"
+#include "../include/arquivarListas.h"
 
 int main()
 {
@@ -16,10 +17,6 @@ int main()
     LISTA_SERVICO *lista_servico = criarListaServicos();
     LISTA_cliente *lista_cliente = criarListaClientes();
     LISTA_produto *lista_produto = criarListaProduto();
-
-    FILE *arquivo;
-    arquivo = fopen("cliente.txt", "w");
-    int r;
 
     int op;
     do

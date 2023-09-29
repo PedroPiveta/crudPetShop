@@ -4,6 +4,11 @@
 #include "../include/servicos.h"
 #include "../include/cliente.h"
 #include "../include/produto.h"
+#include "cliente.c"
+#include "pet.c"
+#include "produto.c"
+#include "servicos.c"
+#include "arquivarListas.c"
 
 int main()
 {
@@ -11,6 +16,10 @@ int main()
     LISTA_SERVICO *lista_servico = criarListaServicos();
     LISTA_cliente *lista_cliente = criarListaClientes();
     LISTA_produto *lista_produto = criarListaProduto();
+
+    FILE *arquivo;
+    arquivo = fopen("cliente.txt", "w");
+    int r;
 
     int op;
     do
@@ -44,6 +53,16 @@ int main()
 
         case 4:
             selectServico(lista_pet, lista_servico);
+            break;
+        
+        case 5:
+            // salvarProdutos(lista_cliente);
+            r = fputs("funciona filho da puta", arquivo);
+            if (r == EOF)
+            {
+                printf("\nError\n");
+            } else printf("\nGravado com sucesso!\n");
+            system("pause");
             break;
 
         case 0:

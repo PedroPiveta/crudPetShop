@@ -13,6 +13,7 @@ typedef struct NodeCliente {
 
 typedef nodeCliente *LISTA_cliente;
 
+LISTA_cliente* criarListaClientes();
 void cadastrarCliente(LISTA_cliente* lista);
 void buscarCliente(LISTA_cliente* lista);
 void editarCliente(LISTA_cliente* lista);

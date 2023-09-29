@@ -7,8 +7,8 @@
 #include "clientes.txt"
 
 void salvarProdutos(LISTA_cliente *listaClientes) {
-    FILE *arquivo;
-    arquivo = fopen("clientes.txt", "a");
+    FILE *arquivo = fopen("clientes.txt", "a");
+    // arquivo = fopen("clientes.txt", "a");
     if(!arquivo){
         printf("\nDeu o caraio aqui\n");
         system("pause");
@@ -25,7 +25,11 @@ void salvarProdutos(LISTA_cliente *listaClientes) {
             // fwrite(&tmp->cpf, sizeof(char), 11, arquivo);
             // fwrite(&tmp->endereco, sizeof(char), sizeof(tmp->endereco), arquivo);
             // fwrite(&tmp->pet->pet_id, sizeof(int), 1, arquivo);
-            fprintf(arquivo, "teste");
+            fprintf(arquivo, "id: %d\n", tmp->cliente_id);
+            fprintf(arquivo, "nome: %s\n", tmp->nome);
+            fprintf(arquivo, "cpf: %s\n", tmp->cpf);
+            fprintf(arquivo, "enderco: %s\n", tmp->endereco);
+            
             tmp = tmp->prox;
         }
         fclose(arquivo);

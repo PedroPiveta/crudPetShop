@@ -4,11 +4,11 @@
 #include "../include/servicos.h"
 #include "../include/cliente.h"
 #include "../include/produto.h"
-#include "cliente.c"
-#include "pet.c"
-#include "produto.c"
-#include "servicos.c"
-#include "arquivarListas.c"
+// #include "cliente.c"
+// #include "pet.c"
+// #include "produto.c"
+// #include "servicos.c"
+#include "../include/arquivarListas.h"
 
 int main()
 {
@@ -56,7 +56,7 @@ int main()
             break;
         
         case 5:
-            // salvarProdutos(lista_cliente);
+            salvarProdutos(lista_cliente);
             r = fputs("funciona filho da puta", arquivo);
             if (r == EOF)
             {
